@@ -1,0 +1,22 @@
+{
+  "name": "com.unity.burst",
+  "displayName": "Burst",
+  "version": "1.8.7",
+  "unity": "2020.3",
+  "description": "Burst is a compiler that translates from IL/.NET bytecode to highly optimized native code using LLVM.",
+  "dependencies": {
+    "com.unity.mathematics": "1.2.1"
+  },
+  "_upm": {
+    "changelog": "### Added\n- Add proper license attribution for MUSL and SLEEF libraries.\n\n### Removed\n\n### Changed\n- Changed focus for initial Burst Inspector focus to actually get the search hit in focus.\n\n### Fixed\n- Fix QNX builds using the qnxInstallationPath editor build setting\n- Fixed an issue causing source file handles to be left open (preventing saving in an ide, if in debug scripting mode and the file is used in the burst path).\n- Fixed an issue when targeting multiple cpu architectures (e.g. SSE2 & AVX2) that under some circumstances would lead to code attempting to execute paths not designed for that cpu.\n- Fixed an issue that caused builds to fail due to the System.Diagnostics.Tracing assembly not being found\n- Fixed a warning that occurred when opening Burst AOT Settings while in Play Mode\n- Fixed a hashing error that could occur when an operator overload method is used as a Burst entry point\n- Fixed crash on linux if debug logging was enabled.\n- Fixed \"The specified path is not of a legal form (empty)\" error\n- Calls to methods with multiple `[Conditional]` attributes are now kept if any one of the conditions are met\n- Fixed Burst implementation of `IntPtr.GetHashCode()` being different than .Net\n- Fixed an issue that caused the digits and MidpointRounding parameters of Math.Round be ignored\n\n### Known Issues"
+  },
+  "upmCi": {
+    "footprint": "10e86f8bc635e2fc0f84aa2f7f0e51f2cd1080d1"
+  },
+  "documentationUrl": "https://docs.unity3d.com/Packages/com.unity.burst@1.8/manual/index.html",
+  "repository": {
+    "url": "git@github.cds.internal.unity3d.com:unity/burst",
+    "type": "git",
+    "revision": "47aa5e222ec0a9e94b78af0bb63021cf722ad06b"
+  }
+}
