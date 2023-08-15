@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Warped Shooting Fx/Scenes/Demo.unity
+- path: Assets/Game scenes.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

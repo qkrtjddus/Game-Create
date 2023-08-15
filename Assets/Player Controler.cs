@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class PlayerControler : MonoBehaviour
 {
-    public float Movespeed = 3.0f;
+    public Vector2 Inputvec;
+    public float speed;
+    Rigidbody2D rigid;
+
+    private void Awake()
+    {
+        rigid = GetComponent<Rigidbody2D>();
+    }
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");    // A, D 키로 이동
-        float VerticalInput = Input.GetAxis("Vertical");       // W, S 키로 이동
-        Vector2 Movement = new Vector2(horizontalInput, VerticalInput) * Movespeed * Time.deltaTime;
-        transform.Translate(Movement);      // 캐릭터 이동
+        Inputvec.x = Input.GetAxisRaw("Horizontal");    // A, D 키로 이동
+        Inputvec.y = Input.GetAxisRaw("Vertical");       // W, S 키로 이동
+        
+    }
+    private void FixedUpdate()
+    {
+        Vector2 nextvec = Inputvec.normalized * speed * Time.fixedDeltaTime;
+        rigid.MovePosition(rigid.position + nextvec);
     }
 }
